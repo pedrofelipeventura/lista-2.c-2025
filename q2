@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int dia;
+
+    // Laço que continua até o usuário digitar 0
+    do {
+        // Solicita a entrada do usuário
+        printf("Digite um dia da semana (1 p/ domingo, 7 p/ sabado, 0 p/ terminar):\n");
+        scanf("%d", &dia);
+
+        // Teste no início para verificar se o número está no intervalo correto
+        if (dia == 0) {
+            break;  // Se o usuário digitar 0, o programa termina
+        }
+
+        // Verifica o número digitado e exibe o nome do dia correspondente
+        switch (dia) {
+            case 1:
+                printf("Domingo\n");
+                break;
+            case 2:
+                printf("Segunda\n");
+                break;
+            case 3:
+                printf("Terça\n");
+                break;
+            case 4:
+                printf("Quarta\n");
+                break;
+            case 5:
+                printf("Quinta\n");
+                break;
+            case 6:
+                printf("Sexta\n");
+                break;
+            case 7:
+                printf("Sábado\n");
+                break;
+            default:
+                printf("Número inválido\n");
+                break;
+        }
+
+    } while (dia != 0);  // O programa continua enquanto o usuário não digitar 0
+
+    return 0;
+}
