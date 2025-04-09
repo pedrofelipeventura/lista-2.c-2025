@@ -1,0 +1,25 @@
+/*
+Implementar um programa para resolver o seguinte problema: Jos ́e tem 150 cent ́ımetros e cresce 2
+cent ́ımetros por ano. O Pedro tem 110 cent ́ımetros e cresce 3 cent ́ımetros por ano. Em quantos anos
+Pedro ser ́a maior que Jos ́e?
+*/
+#include <stdio.h>
+
+int anos = 0;
+
+int main(){
+
+int alturapedro = 110;
+int alturajose = 150;
+
+do{
+alturajose +=2;
+alturapedro +=3;
+anos++;
+}while(alturapedro <= alturajose);
+
+printf("Altura do Pedro será igual a %d em %d anos, sendo maior que a altura do jose que é %d.\n", alturapedro,
+anos, alturajose);
+    
+return 0;
+}
