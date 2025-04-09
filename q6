@@ -1,0 +1,54 @@
+/*
+Escreva um programa que transforme o computador em uma urna eletrˆonica para elei ̧c ̃ao para pre-
+sidente de um certo pa ́ıs, `as quais concorrem os candidatos 5-Paulo e 7-Renata. Cada voto deve ser
+dado pelo n ́umero do candidato, permitindo-se ainda o voto 0 para voto em branco. Qualquer voto
+diferente dos j ́a citados  ́e considerado nulo; em qualquer situa ̧c ̃ao, o eleitor deve ser consultado quanto
+`a confirma ̧c ̃ao do seu voto. No final da elei ̧c ̃ao o programa deve emitir um relat ́orio contendo as por-
+centagens de vota ̧c ̃ao de cada candidato, votos em branco, votos nulos e o candidato eleito. Obs.: O
+c ́odigo para finalizar a urna (vota ̧c ̃ao)  ́e o usu ́ario digitar algum n ́umero negativo.
+*/
+
+#include <stdio.h>
+
+int voto, votoP = 0, votoR = 0, nulo = 0, branco = 0, maior = 0, menor = 0;
+int main(){
+
+    do{
+        puts("Digite o seu voto: (5-Paulo, 7-Renata, 0-Branco e número inferior a 0 para sair)\n");
+        scanf("%d", &voto);
+        if((voto != 5) && (voto != 7) && (voto != 0)){
+            nulo++;
+        }
+        if(voto<0){
+            break;
+        }
+        else if(voto == 0){
+            branco++;
+        }
+        else if(voto == 5){
+            votoP++;
+        }
+        else if(voto == 7){
+            votoR++;
+        }
+    }while(voto >= 0);
+
+    printf("Votos em nulo: %d\n", nulo);
+    printf("Votos em branco: %d\n", branco);
+    printf("Votos Paulo: %d\n", votoP);
+    printf("Votos Renata: %d\n", votoR);
+
+    if(votoP>votoR){
+        maior = votoP;
+        printf("Paulo foi o vencedor com %d votos\n", maior);
+    }
+    if(votoP<votoR){
+        maior = votoR;
+        printf("Renata foi a vencedora com %d votos\n", maior);
+    }
+    if((nulo > votoP) && (nulo > votoR)){
+        printf("Eleição cancelada");
+    }
+    
+    return 0;
+}
