@@ -1,0 +1,54 @@
+/*
+Fazer um programa que receba um valor n no teclado e determine o maior e o menor termo fornecido.
+A condi ̧c ̃ao de termino do programa  ́e quando o usu ́ario digitar zero.
+*/
+
+#include <stdio.h>
+
+int num1, num2;
+int iteracao;
+int maior = 0, menor = 0;
+
+int main() {
+    do {
+        puts("Se quiser continuar, digite qualquer número exceto 0:");
+        scanf("%d", &iteracao);
+
+        if (iteracao == 0) {
+            break;
+        }
+
+        puts("Digite um número:");
+        scanf("%d", &num1);
+        puts("Digite outro número:");
+        scanf("%d", &num2);
+
+        if (maior == 0 && menor == 0) {
+            if (num1 > num2) {
+                maior = num1;
+                menor = num2;
+            } else {
+                maior = num2;
+                menor = num1;
+            }
+        } else {   
+            if (num1 > maior) {
+                maior = num1;
+            }
+            if (num2 > maior) {
+                maior = num2;
+            }
+            if (num1 < menor) {
+                menor = num1;
+            }
+            if (num2 < menor) {
+                menor = num2;
+            }
+        }
+    } while (iteracao != 0); 
+
+    printf("O maior número é: %d\n", maior);
+    printf("O menor número é: %d\n", menor);
+
+    return 0;
+}
