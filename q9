@@ -1,0 +1,22 @@
+/*
+A s ́erie de Fibonacci  ́e formada pela seguinte sequˆencia: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55... etc. Escreva
+um algoritmo que gere a s ́erie de Fibonacci at ́e o vig ́esimo termo.
+*/
+#include <stdio.h>
+
+int main() {
+    
+    int n1 = 0, n2 = 1, proximo, i;
+
+    printf("Sequência de Fibonacci (20 primeiros números):\n");
+
+    for(i = 0; i < 20; i++) {
+        printf("%d ", n1);
+        proximo = n1 + n2;
+        n1 = n2;
+        n2 = proximo;
+    }
+
+    printf("\n");
+    return 0;
+}
