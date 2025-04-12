@@ -1,0 +1,19 @@
+/*
+Elaborar um programa que mostre os resultados da tabuada de um n ́umero inteiro qualquer, a qual
+deve ser apresentada de acordo com sua forma tradicional.
+*/
+
+#include <stdio.h>
+
+int num;
+
+int main(){
+
+    printf("Digite um núm:\n");
+    scanf("%d",&num);
+
+    printf("A tabuada de %d é:\n, %d (x 0), %d (x 1)\n, %d (x 2), %d (x 3)\n,      %d (x 4), %d (x 5)\n, %d (x 6), %d (x 7)\n, %d (x 8), %d (x 9)\n",
+    num, num*0, num*1, num*2, num*3, num*4, num*5, num*6, num*7, num*8, num*9);
+
+    return 0;
+}
