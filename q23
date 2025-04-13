@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 5;
+    int resultado1, resultado2;
+
+    // Pré-decremento: decrementa antes de usar
+    resultado1 = --a;
+    printf("Usando pré-decremento (--a):\n");
+    printf("Resultado = %d\n", resultado1);  // Mostra o valor já decrementado
+    printf("Valor atual de a = %d\n\n", a);  // Confirma que a foi decrementado antes
+
+    // Pós-decremento: usa antes de decrementar
+    resultado2 = b--;
+    printf("Usando pós-decremento (b--):\n");
+    printf("Resultado = %d\n", resultado2);  // Mostra o valor antigo
+    printf("Valor atual de b = %d\n", b);    // Agora b foi decrementado
+
+    return 0;
+}
