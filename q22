@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h> // para usar abs()
+
+int main() {
+    int num, digito, contador = 0;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &num);
+
+    num = abs(num); // torna positivo para facilitar o cálculo
+
+    while (num > 0) {
+        digito = num % 10;     // pega o último dígito
+        if (digito == 7) {
+            contador++;
+        }
+        num = num / 10;        // remove o último dígito
+    }
+
+    printf("O número contém %d dígito(s) 7.\n", contador);
+    return 0;
+}
