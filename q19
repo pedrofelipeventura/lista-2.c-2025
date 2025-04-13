@@ -1,0 +1,31 @@
+/*
+Elaborar um programa que apresente a m ́edia aritm ́etica dos n ́umeros inteiros existentes entre uma
+faixa especificada pelo usu ́ario.
+*/
+
+#include <stdio.h>
+
+int i1, i2;
+int temp;
+int somatorio = 0, elementos;
+
+int main(){
+    
+    printf("Digite dois números inteiros: ");
+    scanf("%d %d", &i1, &i2);
+    
+    if(i1>i2){
+        temp = i1;
+        i1=i2;
+        i2 = temp;
+    }
+
+    for(int i = i1 + 1; i<i2; i++){
+        somatorio += i;
+        elementos++;
+    }
+    float media = (float)somatorio / elementos;
+    
+    printf("Média aritmética = %.2f", media);
+    return 0;
+}
