@@ -1,0 +1,32 @@
+/*
+Elabore um programa que apresente a quantidade de n ́umeros divis ́ıveis por 3 pertencentes a faixa
+A,B especificada pelo usu ́ario. O programa deve funcionar tanto para A > B quanto para B > A.
+*/
+
+#include <stdio.h>
+
+int A, B, i, temp;
+int quantidade = 0;
+
+int main(){
+    
+    printf("Digite um número para A:\n");
+    scanf("%d",&A);
+    printf("Digite um número para B:\n");
+    scanf("%d",&B);
+
+    if(A>B){
+        temp = A;
+        A = B;
+        B = temp;
+    }
+
+    for(i = A+1 ; i<B; i++){
+        if(i % 3 == 0){
+            quantidade++;
+        }
+    }
+    printf("Quantidade de números divisíveis por 3:%d\n", quantidade);
+    
+    return 0;
+}
