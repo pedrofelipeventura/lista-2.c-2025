@@ -1,0 +1,30 @@
+/*
+Um triˆangulo retˆangulo pode ter lados que s ̃ao valores inteiros. O conjunto de trˆes valores inteiros para
+os lados de um triˆangulo retˆangulo  ́e chamado de tripla de Pit ́agoras. Esses trˆes lados precisam satisfazer
+o relacionamento de que a soma do quadrado de dois catetos  ́e igual ao quadrado da hipotenusa. Ache
+todas as triplas de Pit ́agoras n ̃ao superiores a 500 para cateto1, cateto2 e hipotenusa. Este  ́e um
+exemplo de computa ̧c ̃ao por for ̧ca bruta. Isso n ̃ao  ́e esteticamente atraente para muitas pessoas. Mas
+existem muitos motivos para essas t ́ecnicas serem importantes. Como vocˆe descobrir ́a mais adiante no
+Curso de Ciˆencia da Computa ̧c ̃ao, existem in ́umeros problemas interessantes para os quais n ̃ao existe
+uma t ́ecnica algor ́ıtmica conhecida al ́em da simples for ̧ca bruta.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    printf("Triplas de Pitágoras com lados até 500:\n");
+
+    for (a = 1; a <= 500; a++) {
+        for (b = a; b <= 500; b++) { // começa de a para evitar repetições
+            for (c = b; c <= 500; c++) {
+                if (a * a + b * b == c * c) {
+                    printf("(%d, %d, %d)\n", a, b, c);
+                }
+            }
+        }
+    }
+
+    return 0;
+}
