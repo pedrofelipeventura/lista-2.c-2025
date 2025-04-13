@@ -1,0 +1,31 @@
+/*
+Elabore um programa que calcule o somat ́orio de todos os n ́umeros pares pertencentes a faixa A,B
+especificada pelo usu ́ario. O programa deve funcionar tanto para A > B quanto para B > A.
+*/
+
+#include <stdio.h>
+
+int A, B, i, temp;
+int somatorio = 0;
+
+int main(){
+    
+    printf("Digite um número para A:\n");
+    scanf("%d",&A);
+    printf("Digite um número para B:\n");
+    scanf("%d",&B);
+
+    if(A>B){
+        temp = A;
+        A = B;
+        B = temp;
+    }
+
+    for(i = A+1 ; i<B; i++){
+        if(i % 2 == 0){
+            somatorio = i + i-1;
+        }
+    }
+    
+    return 0;
+}
