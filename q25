@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int num_termos = 20; // Número de termos da série
+    double pi_aproximado = 0.0; // Valor aproximado de π
+
+    printf("Número de Termos\tValor Aproximado de π\n");
+    printf("-------------------------------------------------\n");
+
+    // Calcula π utilizando a série infinita
+    for (int i = 0; i < num_termos; i++) {
+        double termo = (i % 2 == 0 ? 1.0 : -1.0) * (4.0 / (2 * i + 1));
+        pi_aproximado += termo;
+
+        // Imprime o número de termos e o valor aproximado de π
+        printf("%d\t\t\t%.6f\n", i + 1, pi_aproximado);
+    }
+
+    return 0;
+}
