@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int numero, maior, menor;
+    int primeiroNumero = 1; // Variável para controlar a inicialização do maior e menor
+
+    printf("Digite números inteiros (um número negativo e par encerra o programa):\n");
+
+    while (1) {
+        printf("Número: ");
+        scanf("%d", &numero);
+
+        // Verifica a condição de saída (número negativo e par)
+        if (numero < 0 && numero % 2 == 0) {
+            break;
+        }
+
+        // Inicializa maior e menor com o primeiro número válido
+        if (primeiroNumero) {
+            maior = menor = numero;
+            primeiroNumero = 0;
+        } else {
+            if (numero > maior) {
+                maior = numero;
+            }
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
+    }
+
+    // Verifica se ao menos um número foi inserido
+    if (!primeiroNumero) {
+        printf("O maior número é %d e o menor número é %d.\n", maior, menor);
+        printf("O produto do maior pelo menor é: %d\n", maior * menor);
+    } else {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+
+    return 0;
+}
