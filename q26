@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// Função para converter decimal para binário
+void decimalParaBinario(int numero, char *binario) {
+    int i = 0;
+    while (numero > 0) {
+        binario[i++] = (numero % 2) + '0';
+        numero /= 2;
+    }
+    binario[i] = '\0';
+
+    // Inverte a string para obter a ordem correta
+    for (int j = 0; j < i / 2; j++) {
+        char temp = binario[j];
+        binario[j] = binario[i - j - 1];
+        binario[i - j - 1] = temp;
+    }
+}
+
+int main() {
+    printf("Decimal\tBinário\t\tOctal\tHexadecimal\n");
+    printf("------------------------------------------\n");
+
+    for (int i = 1; i <= 256; i++) {
+        char binario[32] = {0};
+        decimalParaBinario(i, binario
