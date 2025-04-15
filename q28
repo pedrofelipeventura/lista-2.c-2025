@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    unsigned char X, Y;
+    unsigned char valores[9]; // Vetor para armazenar os valores de Y-4 até Y+4
+
+    // Entrada dos valores X e Y
+    printf("Digite um valor para X (unsigned char): ");
+    scanf("%hhu", &X);
+
+    do {
+        printf("Digite um valor para Y (unsigned char, maior ou igual a 5): ");
+        scanf("%hhu", &Y);
+    } while (Y < 5);
+
+    // Preenche os elementos ao redor de Y
+    for (int i = 0; i < 9; i++) {
+        valores[i] = Y - 4 + i;
+    }
+
+    // Esconde os bits de X nos bits menos significativos
+    for (int i = 0; i < 9; i++) {
+        valores[i] = (valores[i] & 0xFE) | (X & 1); // Substitui o bit menos significativo
+        X >>= 1; // Move para o próximo bit de X
+    }
+
+    // Exibe os valores finais
+    printf("Valores modificados:\n");
+    for (int i = 0; i < 9; i++) {
+        printf("Posição %d (Y = %d): %d\n", i, Y - 4 + i, valores[i]);
+    }
+
+    return 0;
+}
